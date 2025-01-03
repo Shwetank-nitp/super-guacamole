@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { LucideIcon, LucideProps } from "lucide-react";
+import { LucideProps } from "lucide-react";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
 
 type HeaderPropType = {

@@ -15,7 +15,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { text2textgenerationapi } from "@/lib/api_routes/_routes";
 import Empty from "@/components/ui/empty";
 import LoadingDefault from "@/components/loading/loading";
 import { cn } from "@/lib/utils";

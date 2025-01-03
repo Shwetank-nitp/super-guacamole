@@ -28,11 +28,9 @@ async function POST(request: NextRequest) {
     const payload = await request.json();
     const body = JSON.stringify(payload);
 
-    let evt: WebhookEvent;
-
     // Verify payload with headers
     try {
-      evt = svix_wh.verify(body, {
+      svix_wh.verify(body, {
         "svix-id": svix_id,
         "svix-timestamp": svix_timestamp,
         "svix-signature": svix_signature,
@@ -41,7 +39,7 @@ async function POST(request: NextRequest) {
       await connect2db();
 
       const email: string[] = payload.data.email_addresses.map(
-        (item: any) => item.email_address
+        (item: (typeof payload.data.email_addresses)[0]) => item.email_address
       );
 
       const uid_clerk = payload.data.id;

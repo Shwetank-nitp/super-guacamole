@@ -1,5 +1,3 @@
-import Image from "next/image";
-import loading from "../../../public/starIcon.png";
 import { cn } from "@/lib/utils";
 
 interface LoadingProps {

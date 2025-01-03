@@ -9,7 +9,6 @@ import { DialogHeader } from "../ui/dialog";
 import {
   Check,
   Images,
-  LayoutDashboard,
   LucideProps,
   Music,
   Text,

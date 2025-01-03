@@ -1,4 +1,3 @@
-import { checkusertierapi } from "@/lib/api_routes/_routes";
 import { checkTier, manageTier } from "@/lib/checkusertier";
 import musicGeneration from "@/lib/model-apis/music/text2audioapi";
 import { NextRequest, NextResponse } from "next/server";
@@ -42,6 +41,7 @@ export async function POST(request: NextRequest) {
 
     return new NextResponse(resblob, { status: 200 });
   } catch (error) {
+    console.log("[ERROR IN MUSIC GENERATION API] : ", error);
     return NextResponse.json(
       { error: "our music generation service is down." },
       { status: 500 }

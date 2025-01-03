@@ -3,9 +3,7 @@ import { cn } from "@/lib/utils";
 import {
   MessageSquare,
   Image,
-  Video,
   Music,
-  Code,
   LucideProps,
   MoveRight,
 } from "lucide-react";

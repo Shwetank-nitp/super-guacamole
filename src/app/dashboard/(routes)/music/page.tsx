@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/form";
 import Header from "@/components/ui/header";
 import { Input } from "@/components/ui/input";
-import { text2audiogenerationapi } from "@/lib/api_routes/_routes";
 import { useUser } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowDown, Music } from "lucide-react";

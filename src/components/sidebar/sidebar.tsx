@@ -6,15 +6,12 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import logo from "../../../public/logo.png";
 import {
-  Code,
   Images,
   LayoutDashboard,
   LucideProps,
   Music,
   Settings,
   Text,
-  Video,
-  Zap,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import {
@@ -26,9 +23,6 @@ import {
 import useUsage from "@/app/store/usage";
 import { useUser } from "@clerk/nextjs";
 import LoadingDefault from "../loading/loading";
-import { Card, CardContent, CardHeader } from "../ui/card";
-import { Progress } from "../ui/progress";
-import { Button } from "../ui/button";
 import { FreeTierCard, ProTierCard } from "./usage-card";
 
 const monsterrat = Montserrat({
@@ -61,7 +55,6 @@ const routes: Item[] = [
     href: "/dashboard/image-generation",
     hover: "hover:text-green-200",
   },
-
   {
     label: "Music Generation",
     logo: Music,
@@ -76,7 +69,6 @@ const routes: Item[] = [
     href: "/dashboard/conversation",
     hover: "hover:text-yellow-200",
   },
-
   {
     label: "Settings",
     logo: Settings,
@@ -92,8 +84,10 @@ const Sidebar = () => {
   const user = useUser();
 
   useEffect(() => {
-    fetchUsage(user.user?.id!).finally(() => setLoading(false));
-  }, [user.user]);
+    if (user.user?.id) {
+      fetchUsage(user.user.id).finally(() => setLoading(false));
+    }
+  }, [fetchUsage, user.user]);
 
   return (
     <div className="w-full flex flex-col h-full py-4 px-4 overflow-auto">
@@ -116,7 +110,7 @@ const Sidebar = () => {
               pathname === item.href ? "bg-white/10" : ""
             )}
           >
-            <item.logo className={cn(item.color, "mr-2")}></item.logo>
+            <item.logo className={cn(item.color, "mr-2")} />
             <div className={cn("font-bold")}>{item.label}</div>
           </Link>
         ))}

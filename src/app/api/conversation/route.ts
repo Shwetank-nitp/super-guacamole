@@ -1,4 +1,3 @@
-import { checkusertierapi } from "@/lib/api_routes/_routes";
 import { checkTier, manageTier } from "@/lib/checkusertier";
 import generateResponse from "@/lib/model-apis/conversation/text2textgenerationapi";
 import { marked } from "marked";

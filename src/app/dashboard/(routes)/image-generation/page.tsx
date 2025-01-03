@@ -16,12 +16,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import LoadingDefault from "@/components/loading/loading";
-import { text2imagegenerationapi } from "@/lib/api_routes/_routes";
 import Empty from "@/components/ui/empty";
 import { useUser } from "@clerk/nextjs";
 import LimitExceeded from "@/components/dialog/limit-exceeded";
 import CircularProgress from "@/components/ui/circular-progressbar";
 import useUsage from "@/app/store/usage";
+import NextImage from "next/image";
 
 const formSchema = z.object({
   query: z.string().min(1).max(200),
@@ -157,7 +157,7 @@ const ImageGeneration = () => {
         {errorMessage && <p className="text-red-500">{errorMessage}</p>}
         {imageurl && (
           <div className="md:max-w-[320px] border rounded-md overflow-hidden">
-            <img
+            <NextImage
               src={imageurl}
               alt="Generated AI image"
               className="w-full rounded-md h-auto hover:scale-105 transition-transform"

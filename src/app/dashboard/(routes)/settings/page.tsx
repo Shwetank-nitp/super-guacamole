@@ -2,7 +2,7 @@
 
 // [todo] :: in this page there is too much prop dirlling convert into context api orivider ot prevent prop dirlling.
 
-import { Laptop, LogOut, Moon, PenTool, Settings, Sun } from "lucide-react";
+import { Laptop, Moon, Settings, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,15 +15,9 @@ import {
 
 import { useTheme } from "next-themes";
 import Header from "@/components/ui/header";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LoadingDefault from "@/components/loading/loading";
-import { SignOutButton, UserButton, useUser } from "@clerk/nextjs";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { useUser } from "@clerk/nextjs";
 import PriceCard from "@/components/ui/custom-card";
 import useUsage from "@/app/store/usage";
 
@@ -63,14 +57,13 @@ const Page = () => {
 
   async function onSubscribe(title: string) {
     setLoadingOfSubmission(true);
-    
+
     const req = {
       title,
       uid_clerk: user.user?.id,
     };
 
     try {
-
       const res = await fetch(process.env.NEXT_PUBLIC_SUBSCRIBE!, {
         method: "POST",
         body: JSON.stringify(req),
@@ -80,8 +73,8 @@ const Page = () => {
         const error = (await res.json()).error;
         console.error(error);
       }
-
-      fetchUsage(user.user?.id!);
+      // check if user is authenticated
+      if (user.user?.id) fetchUsage(user.user?.id);
     } catch (error) {
       console.log(error);
     } finally {

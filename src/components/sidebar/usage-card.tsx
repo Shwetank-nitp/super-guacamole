@@ -1,7 +1,7 @@
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
-import { BellElectric, ThumbsDown, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
 
 const FreeTierCard = ({ usage }: { usage: number }) => {
   return (

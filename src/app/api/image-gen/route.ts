@@ -1,4 +1,3 @@
-import { checkusertierapi } from "@/lib/api_routes/_routes";
 import { checkTier, manageTier } from "@/lib/checkusertier";
 import imageGeneration from "@/lib/model-apis/image/imagegenerationapi";
 import { NextRequest, NextResponse } from "next/server";
@@ -35,6 +34,7 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
+    console.log("[ERROR IN IMAGE GENERATION API] : ", error);
     return NextResponse.json(
       {
         error: "sorry cannot fetch you request, try again later",
