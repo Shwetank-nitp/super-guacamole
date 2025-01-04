@@ -133,7 +133,7 @@ const Page = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>Availabel Themes</DropdownMenuLabel>
+              <DropdownMenuLabel>Available Themes</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => theme.setTheme("dark")}>
                 <Moon />
