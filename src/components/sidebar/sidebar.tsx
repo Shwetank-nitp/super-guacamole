@@ -96,7 +96,7 @@ const Sidebar = () => {
           <Image src={logo} alt="logo" width={50} height={50} />
         </div>
         <div className={cn(monsterrat.className, "text-2xl font-bold")}>
-          Genius
+          Sage
         </div>
       </Link>
       <div className="flex-1">
@@ -116,15 +116,9 @@ const Sidebar = () => {
         ))}
       </div>
       <div className="flex justify-center mt-2 md:mt-4">
-        {loading ? (
-          <LoadingDefault color="bg-gray-100/10" height={130} />
-        ) : plan === "FREE" ? (
-          <Link href={"/dashboard/settings"}>
-            <FreeTierCard usage={usage} />
-          </Link>
-        ) : (
-          <ProTierCard />
-        )}
+        {loading && <LoadingDefault color="bg-gray-100/10" height={130} />}
+        {!loading && plan === "FREE" && <FreeTierCard usage={usage} />}
+        {!loading && plan === "PRO" && <ProTierCard />}
       </div>
     </div>
   );
