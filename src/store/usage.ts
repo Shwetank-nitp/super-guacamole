@@ -35,7 +35,7 @@ const useUsage = create<Usage>((set) => ({
       });
     });
   },
-  setUsage: (num: number, plan: "PRO" | "FREE") => {
+  setUsage: (num, plan) => {
     set({ usage: num, plan });
   },
 }));
