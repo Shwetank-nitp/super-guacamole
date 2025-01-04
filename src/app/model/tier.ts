@@ -30,7 +30,7 @@ const tierSchema = new Schema<ITier>({
   },
   name_of_plan: {
     type: String,
-    enum: ["silver", "gold", "platinum"], // Corrected "sliver" to "silver"
+    enum: ["silver", "gold", "platinum"],
   },
 });
 
