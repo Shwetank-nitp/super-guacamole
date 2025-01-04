@@ -1,4 +1,4 @@
-import TierModel from "@/app/model/tier";
+import TierModel from "@/model/tier";
 import connect2db from "@/lib/db/connect2db";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -24,12 +24,30 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (
+      usertier.subscription_end_date &&
+      usertier.subscription_end_date.getTime() < Date.now()
+    ) {
+      await TierModel.updateOne({ uid_clerk }, { plan: "FREE", usage: 5 });
+
+      return NextResponse.json(
+        {
+          result: {
+            usage: 5,
+            plan: "FREE",
+          },
+        },
+        { status: 200 }
+      );
+    }
+
     return NextResponse.json(
       {
         result: {
           usage: usertier.usage,
           plan: usertier.plan,
           title: usertier.name_of_plan,
+          valid_date: usertier.subscription_end_date,
         },
       },
       { status: 200 }
