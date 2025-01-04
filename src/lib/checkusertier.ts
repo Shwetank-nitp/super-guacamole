@@ -1,4 +1,4 @@
-import TierModel from "@/app/model/tier";
+import TierModel from "@/model/tier";
 import connect2db from "./db/connect2db";
 
 export const checkTier = async (uid_clerk: string) => {

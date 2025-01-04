@@ -1,4 +1,4 @@
-import TierModel from "@/app/model/tier";
+import TierModel from "@/model/tier";
 import connect2db from "@/lib/db/connect2db";
 import { NextRequest, NextResponse } from "next/server";
 

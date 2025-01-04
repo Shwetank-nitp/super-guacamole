@@ -19,7 +19,7 @@ import Empty from "@/components/ui/empty";
 import LoadingDefault from "@/components/loading/loading";
 import { cn } from "@/lib/utils";
 import { useUser } from "@clerk/nextjs";
-import useUsage from "@/app/store/usage";
+import useUsage from "@/store/usage";
 import LimitExceeded from "@/components/dialog/limit-exceeded";
 
 export interface conversation {

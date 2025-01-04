@@ -20,7 +20,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import useUsage from "@/app/store/usage";
+import useUsage from "@/store/usage";
 import { useUser } from "@clerk/nextjs";
 import LoadingDefault from "../loading/loading";
 import { FreeTierCard, ProTierCard } from "./usage-card";

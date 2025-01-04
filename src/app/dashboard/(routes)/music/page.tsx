@@ -1,6 +1,6 @@
 "use client";
 
-import useUsage from "@/app/store/usage";
+import useUsage from "@/store/usage";
 import LimitExceeded from "@/components/dialog/limit-exceeded";
 import LoadingDefault from "@/components/loading/loading";
 import { Button } from "@/components/ui/button";

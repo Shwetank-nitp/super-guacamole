@@ -20,7 +20,7 @@ import Empty from "@/components/ui/empty";
 import { useUser } from "@clerk/nextjs";
 import LimitExceeded from "@/components/dialog/limit-exceeded";
 import CircularProgress from "@/components/ui/circular-progressbar";
-import useUsage from "@/app/store/usage";
+import useUsage from "@/store/usage";
 import NextImage from "next/image";
 
 const formSchema = z.object({

@@ -1,5 +1,5 @@
-import TierModel from "@/app/model/tier";
-import UserModel from "@/app/model/user";
+import TierModel from "@/model/tier";
+import UserModel from "@/model/user";
 import connect2db from "@/lib/db/connect2db";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";

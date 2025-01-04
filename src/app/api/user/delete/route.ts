@@ -1,9 +1,9 @@
 import { Webhook } from "svix";
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
-import UserModel from "@/app/model/user";
+import UserModel from "@/model/user";
 import connect2db from "@/lib/db/connect2db";
-import TierModel from "@/app/model/tier";
+import TierModel from "@/model/tier";
 
 async function POST(request: NextRequest) {
   try {
