@@ -22,8 +22,11 @@ const ProSubscriptionCard = ({
         <div className="rounded-2xl shadow-xl overflow-hidden border">
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-10 text-white">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <Crown className="h-8 w-8" />
+              <div
+                className="flex items-center gap-2
+              flex-wrap"
+              >
+                <Crown className="h-8 w-8 hidden md:block" />
                 <h1 className="text-3xl font-bold">Pro Member</h1>
               </div>
               <span className="px-4 py-1 bg-white/20 rounded-full text-sm backdrop-blur-sm">
@@ -39,7 +42,8 @@ const ProSubscriptionCard = ({
               <div>
                 <p className="text-muted-foreground">Subscription Status</p>
                 <p className="text-lg dark:text-slate-200 text-slate-800 font-semibold ">
-                  Active until {valid_date}
+                  Active until{" "}
+                  <span className="block md:inline-block">{valid_date}</span>
                 </p>
               </div>
               <Shield className="h-6 w-6 text-green-500" />

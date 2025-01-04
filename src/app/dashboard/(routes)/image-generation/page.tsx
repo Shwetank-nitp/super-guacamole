@@ -143,21 +143,15 @@ const ImageGeneration = () => {
 
       <div className="my-4 md:my-8 w-full flex justify-center md:block pb-6">
         {loading && (
-          <LoadingDefault
-            width={320}
-            height={320}
-            className="relative flex justify-center items-center"
-          >
-            <div className="absolute z-20">
-              <CircularProgress progress={progress} color="text-green-500" />
-            </div>
-          </LoadingDefault>
+          <div className="w-[320px] max-w-[320px]  flex items-center justify-center h-[320px] border rounded-md overflow-hidden bg-accent">
+            <CircularProgress progress={progress} />
+          </div>
         )}
         {!loading && !imageurl && !errorMessage && <Empty />}
         {errorMessage && <p className="text-red-500">{errorMessage}</p>}
         {imageurl && (
           <div className="md:max-w-[320px] border rounded-md overflow-hidden">
-            <NextImage
+            <img
               src={imageurl}
               alt="Generated AI image"
               className="w-full rounded-md h-auto hover:scale-105 transition-transform"

@@ -20,7 +20,7 @@ import LoadingDefault from "@/components/loading/loading";
 import { useUser } from "@clerk/nextjs";
 import PriceCard from "@/components/ui/custom-card";
 import useUsage from "@/store/usage";
-import ProSubscriptionCard from "@/components/pro-subscription-card.ts/pro-subscription-card";
+import ProSubscriptionCard from "@/components/pro-subscription-card/pro-subscription-card";
 
 const plans = [
   {
