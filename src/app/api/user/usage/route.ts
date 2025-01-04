@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
         result: {
           usage: usertier.usage,
           plan: usertier.plan,
-          title: usertier.tier_name,
+          title: usertier.name_of_plan,
         },
       },
       { status: 200 }
