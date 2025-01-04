@@ -150,7 +150,8 @@ const Page = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        {plan === "FREE" ? (
+        {!plan && <LoadingDefault />}
+        {plan === "FREE" && (
           <div className="my-4 md:my-8 flex flex-col gap-y-4">
             <span className="font-bold">
               Get Unlimited Generations
@@ -176,11 +177,8 @@ const Page = () => {
               ))}
             </div>
           </div>
-        ) : (
-          <div className="">
-            {plan} {rank}
-          </div>
         )}
+        {plan === "PRO" && <div>{plan}</div>}
       </div>
     </div>
   );

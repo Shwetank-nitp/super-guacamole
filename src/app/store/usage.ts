@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 interface Usage {
   usage: number;
-  plan: "FREE" | "PRO";
+  plan: "FREE" | "PRO" | null;
   rank?: "SILVER" | "GOLD" | "PLATINUME";
   fetchUsage: (uid: string) => Promise<void>;
   setUsage: (num: number, plan: "PRO" | "FREE") => void;
@@ -10,7 +10,7 @@ interface Usage {
 
 const useUsage = create<Usage>((set) => ({
   usage: 0,
-  plan: "FREE",
+  plan: null,
   fetchUsage: async (userid: string) => {
     const response = await fetch(process.env.NEXT_PUBLIC_USAGE!, {
       method: "POST",
