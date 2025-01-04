@@ -31,7 +31,7 @@ const ProSubscriptionCard = ({
               </span>
             </div>
             <p className="mt-4 text-indigo-100">
-              You're subscribed to our {rank} plan
+              You&apos;re subscribed to our {rank} plan
             </p>
           </div>
           <div className="px-8 py-6">
