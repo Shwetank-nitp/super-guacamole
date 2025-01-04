@@ -23,8 +23,6 @@ const useUsage = create<Usage>((set) => ({
       return;
     }
     response.json().then((data) => {
-      console.log(data);
-
       set({
         usage: Number(process.env.NEXT_PUBLIC_USAGE_LIMIT!) - data.result.usage,
         plan: data.result.plan,
