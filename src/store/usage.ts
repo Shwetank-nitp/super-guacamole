@@ -6,7 +6,7 @@ interface Usage {
   rank?: "SILVER" | "GOLD" | "PLATINUME";
   valid_date?: string;
   fetchUsage: (uid: string) => Promise<void>;
-  setUsage: (num: number, plan: "PRO" | "FREE") => void;
+  setUsage: (num: number, plan: "PRO" | "FREE" | null) => void;
 }
 
 const useUsage = create<Usage>((set) => ({
