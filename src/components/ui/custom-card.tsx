@@ -25,7 +25,7 @@ const PriceCard = ({
   return (
     <div
       className={cn(
-        "border rounded-md px-4 py-2 hover:scale-105 transition-all hover:shadow-md relative hover:after:opacity-100 after:content-[''] after:opacity-0 after:rotate-90 after:bg-gradient-to-tr after:h-[100%] after:w-[100%] after:inset-0 after:absolute after:-z-20 overflow-hidden after:blur-2xl after:animate-rotate before:absolute before:content-[''] before:bg-primary-foreground before:-z-10 before:inset-0 before:m-1",
+        "border rounded-md px-4 py-2 transition-all hover:shadow-md relative hover:after:opacity-100 after:content-[''] after:opacity-0 after:rotate-90 after:bg-gradient-to-tr after:h-[100%] after:w-[100%] after:inset-0 after:absolute after:-z-20 overflow-hidden after:blur-2xl after:animate-rotate before:absolute before:content-[''] before:bg-primary-foreground before:-z-10 before:inset-0 before:m-1",
         gradientString,
         className
       )}
