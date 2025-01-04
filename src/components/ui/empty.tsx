@@ -14,7 +14,7 @@ const Empty = (className: { className?: string }) => {
         <Image alt="empty" src={emptyImage} width={150} height={150} />
       </div>
       <p className="text-sm text-muted-foreground font-bold">
-        Oops! you dont we dont have any thing to show
+        Oops! we have nothing to show.
       </p>
     </div>
   );

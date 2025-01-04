@@ -4,7 +4,7 @@ import * as React from "react";
 
 function CircularProgress({
   progress,
-  bgColor = "text-gray-200",
+  bgColor = "text-slate-400",
   color = "text-blue-600",
 }: {
   progress: number;
@@ -16,7 +16,7 @@ function CircularProgress({
       <svg className="w-full h-full" viewBox="0 0 100 100">
         <circle
           className={bgColor}
-          strokeWidth="4"
+          strokeWidth="2"
           stroke="currentColor"
           fill="transparent"
           r="45"
@@ -25,7 +25,7 @@ function CircularProgress({
         />
         <circle
           className={color}
-          strokeWidth="4"
+          strokeWidth="2"
           strokeLinecap="round"
           stroke="currentColor"
           fill="transparent"
