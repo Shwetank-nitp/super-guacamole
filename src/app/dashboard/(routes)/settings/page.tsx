@@ -20,6 +20,7 @@ import LoadingDefault from "@/components/loading/loading";
 import { useUser } from "@clerk/nextjs";
 import PriceCard from "@/components/ui/custom-card";
 import useUsage from "@/app/store/usage";
+import ProSubscriptionCard from "@/components/pro-subscription-card.ts/pro-subscription-card";
 
 const plans = [
   {
@@ -53,7 +54,7 @@ const Page = () => {
   const [loading, setLoading] = useState(true);
   const user = useUser();
   const [loadingOfSubmission, setLoadingOfSubmission] = useState(false);
-  const { plan, rank, fetchUsage } = useUsage();
+  const { plan, rank, valid_date, fetchUsage } = useUsage();
 
   async function onSubscribe(title: string) {
     setLoadingOfSubmission(true);
@@ -150,9 +151,12 @@ const Page = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        {!plan && <LoadingDefault />}
+        {!plan && <LoadingDefault key={"loading"} />}
         {plan === "FREE" && (
-          <div className="my-4 md:my-8 flex flex-col gap-y-4">
+          <div
+            key={"freeusercard"}
+            className="my-4 md:my-8 flex flex-col gap-y-4"
+          >
             <span className="font-bold">
               Get Unlimited Generations
               <span className="bg-gradient-to-tr text-white from-purple-500 to-pink-500 py-2 px-3 rounded-2xl mx-1">
@@ -178,7 +182,13 @@ const Page = () => {
             </div>
           </div>
         )}
-        {plan === "PRO" && <div>{plan}</div>}
+        {plan === "PRO" && (
+          <ProSubscriptionCard
+            rank={rank!}
+            valid_date={valid_date!}
+            key={"prousercard"}
+          />
+        )}
       </div>
     </div>
   );
