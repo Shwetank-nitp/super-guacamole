@@ -5,7 +5,7 @@ interface ITier {
   uid_clerk: string;
   usage: number;
   subscription_end_data: Date;
-  tier_name: string;
+  name_of_plan: "silver" | "gold" | "platinum";
 }
 
 const tierSchema = new Schema<ITier>({
@@ -28,9 +28,9 @@ const tierSchema = new Schema<ITier>({
   subscription_end_data: {
     type: Date,
   },
-  tier_name: {
+  name_of_plan: {
     type: String,
-    default: null,
+    enum: ["sliver", "gold", "platinum"],
   },
 });
 
