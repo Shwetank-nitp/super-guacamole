@@ -48,7 +48,7 @@ const SlideImage = ({ list }: { list: StaticImageData[] }) => {
             alt="image"
             className="rounded-lg object-contain"
             loading="lazy"
-            onLoadingComplete={() => setLoading(false)}
+            onLoad={() => setLoading(false)}
           />
         </motion.div>
       </AnimatePresence>
