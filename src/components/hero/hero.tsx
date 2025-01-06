@@ -50,7 +50,7 @@ const Hero = () => {
           "font-bold flex flex-col items-center text-center lg:block lg:text-start"
         )}
       >
-        <h2 className="capitalize md:text-4xl text-2xl">
+        <h2 className="capitalize md:text-4xl text-2xl text-white">
           Get started with the AI.
         </h2>
         <Typewriter words={words} className="p-0 m-0" />

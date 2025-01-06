@@ -6,7 +6,7 @@ export default function LandingPage() {
   return (
     <main className="bg-slate-900 min-h-full overflow-hidden">
       {/** navigation */}
-      <div className="md:px-32 px-4 h-16 flex items-center fixed w-full top-0 left-0 border-b shadow-lg backdrop-blur-xl inset-0 z-50">
+      <div className="md:px-32 px-4 h-16 flex items-center fixed w-full top-0 left-0 dark:border-b shadow-lg backdrop-blur-xl inset-0 z-50">
         <Navigation />
       </div>
 
