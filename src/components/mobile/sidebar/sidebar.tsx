@@ -19,7 +19,7 @@ const Sidebar = () => {
       </SheetTrigger>
       <SheetContent side={"left"} className="p-0 bg-gray-900 text-gray-200">
         <SheetHeader className="hidden">
-          <SheetTitle>Genius</SheetTitle>
+          <SheetTitle>Sage</SheetTitle>
         </SheetHeader>
         <ItemOfTheSidebar />
       </SheetContent>
