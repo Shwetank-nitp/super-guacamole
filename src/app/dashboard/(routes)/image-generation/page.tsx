@@ -15,13 +15,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import LoadingDefault from "@/components/loading/loading";
 import Empty from "@/components/ui/empty";
 import { useUser } from "@clerk/nextjs";
 import LimitExceeded from "@/components/dialog/limit-exceeded";
 import CircularProgress from "@/components/ui/circular-progressbar";
 import useUsage from "@/store/usage";
-import NextImage from "next/image";
 
 const formSchema = z.object({
   query: z.string().min(1).max(200),
