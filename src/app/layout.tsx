@@ -30,7 +30,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ClerkProvider afterSignOutUrl={"/"}>{children}</ClerkProvider>
+          <ClerkProvider afterSignOutUrl={process.env.BASE_URL!}>
+            {children}
+          </ClerkProvider>
         </ThemeProvider>
       </body>
     </html>
